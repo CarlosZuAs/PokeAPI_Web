@@ -8,8 +8,14 @@
     <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pokedex.css">
 </head>
 <body>
     <!-- Navbar -->
@@ -42,18 +48,60 @@
                 <div class="col-lg-6">
                     <h1 class="display-4">Descubre el mundo Pokémon</h1>
                     <p class="lead">Explora, aprende y diviértete con nuestra interactiva Pokédex</p>
-                    <a href="#demo" class="btn btn-primary btn-lg">Prueba la Demo</a>
+                    <a href="#pokedex" class="btn btn-primary btn-lg">Ver Pokédex</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pokédex Section -->
-    <section id="pokedex" class="py-5">
+    <section id="pokedex" class="pokedex-section py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Pokédex Interactiva</h2>
-            <div id="pokemon-grid" class="row g-4">
-                <!-- Pokemon cards will be dynamically loaded here -->
+            <div class="pokedex-title">
+                <img src="media/img/pokedex.png" alt="Pokédex">
+            </div>
+            
+            <!-- Filtros de Pokémon -->
+            <div class="pokemon-buttons mb-4">
+                <button class="filter reset btn" data-filter="*">Todos</button>
+                <button class="sort btn" data-sort-by="number">Número</button>
+                <button class="sort btn" data-sort-by="name">Alfabéticamente</button>
+                
+                <!-- Tipos de Pokémon -->
+                <div class="type-buttons mt-3">
+                    <button class="filter btn" data-filter=".type-steel">Acero</button>
+                    <button class="filter btn" data-filter=".type-water">Agua</button>
+                    <button class="filter btn" data-filter=".type-bug">Bicho</button>
+                    <button class="filter btn" data-filter=".type-dragon">Dragón</button>
+                    <button class="filter btn" data-filter=".type-electric">Eléctrico</button>
+                    <button class="filter btn" data-filter=".type-ghost">Fantasma</button>
+                    <button class="filter btn" data-filter=".type-fire">Fuego</button>
+                    <button class="filter btn" data-filter=".type-fairy">Hada</button>
+                    <button class="filter btn" data-filter=".type-ice">Hielo</button>
+                    <button class="filter btn" data-filter=".type-fighting">Lucha</button>
+                    <button class="filter btn" data-filter=".type-normal">Normal</button>
+                    <button class="filter btn" data-filter=".type-grass">Planta</button>
+                    <button class="filter btn" data-filter=".type-psychic">Psíquico</button>
+                    <button class="filter btn" data-filter=".type-rock">Roca</button>
+                    <button class="filter btn" data-filter=".type-dark">Siniestro</button>
+                    <button class="filter btn" data-filter=".type-ground">Tierra</button>
+                    <button class="filter btn" data-filter=".type-poison">Veneno</button>
+                    <button class="filter btn" data-filter=".type-flying">Volador</button>
+                </div>
+                
+                <!-- Formas especiales -->
+                <div class="special-buttons mt-3">
+                    <button class="filter btn" data-filter=".sp-mega">Mega</button>
+                    <button class="filter btn" data-filter=".sp-regional">Regional</button>
+                    <button class="filter btn" data-filter=".sp-gigamax">Gigamax</button>
+                </div>
+            </div>
+            
+            <p id="count" class="text-center">Pokémon seleccionados: 0</p>
+            
+            <!-- Contenedor de tarjetas Pokémon -->
+            <div class="poke-cont">
+                <!-- Las tarjetas se cargarán dinámicamente aquí -->
             </div>
         </div>
     </section>
@@ -79,13 +127,12 @@
         </div>
     </footer>
 
-    <!-- Bootstrap 5.3 JS Bundle -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- ModelViewer JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
     <script type="module" src="https://unpkg.com/@google/model-viewer"></script>
-    <!-- Custom JS -->
     <script src="js/main.js"></script>
+    <script src="js/pokedex.js"></script>
 </body>
 </html>
